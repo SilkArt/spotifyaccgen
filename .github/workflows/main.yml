@@ -1,0 +1,16 @@
+name: CI
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update & Upgrade Repositories
+      run: sudo apt update && sudo apt upgrade
+    - name: Install cURL & Git
+      run: sudo apt install curl git
+    - name: Clone Repository
+      run: git clone https://github.com/aniruddhsinghal5/spotifyaccgen
+    - name: Change Folder to Repository
+      run: cd spotifyaccgen
+    - name: Run Script
+      run: bash spotify.sh
